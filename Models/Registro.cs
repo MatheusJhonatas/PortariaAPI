@@ -1,6 +1,6 @@
 using PortariaAPI.Models;
 
-public class Registro()
+public class Registro
 {
     public int Numero { get; set; }
     public Visitante visitante { get; set; }
