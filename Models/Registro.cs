@@ -7,13 +7,6 @@ public class Registro
     public DateTime horarioEntrada { get; set; }
     public DateTime horarioSaida { get; set; }
     public string Status { get; set; }
-    public void RegistrarEntrada(Visitante visitante, DateTime horario)
-    {
 
-    }
-    public void RegistrarSaida(Visitante visitante, DateTime horario)
-    {
-
-    }
 
 }
