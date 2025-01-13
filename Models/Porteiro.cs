@@ -1,11 +1,12 @@
-using System.ComponentModel.DataAnnotations;
+using PortariaAPI.Interface;
+using PortariaAPI.Models;
 
-namespace PortariaAPI.Models;
-
-public class Visitante : IPessoa
+public class Porteiro : IPessoa
 {
+    public List<Registro> Registros { get; set; }
+    public List<FuncionarioPortaria> FuncionariosPortarias { get; set; }
     public string Nome { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string DocumentoRG { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string Tipo { get; set; }
     public string Endereco { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public string Tipo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 }
