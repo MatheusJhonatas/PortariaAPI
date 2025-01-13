@@ -9,4 +9,5 @@ public class PrestadorServico : IPessoa
     public string DocumentoRG { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string Endereco { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string Tipo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 }
