@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PortariaAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d049caa08d8f5d4592fc641a98b4f8ecdbef3472")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ad1feeb8fd55bd150f05450c68e32d547c80a9e")]
 [assembly: System.Reflection.AssemblyProductAttribute("PortariaAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PortariaAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

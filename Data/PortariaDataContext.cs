@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using PortariaAPI.Models;
-
 public class PortariaDataContext : DbContext
 {
     public DbSet<Porteiro> Porteiros { get; set; }
@@ -18,9 +17,23 @@ public class PortariaDataContext : DbContext
     {
         // modelBuilder.ApplyConfiguration(new PorteirosMap());
         modelBuilder.ApplyConfiguration(new MoradoresMap());
-        // modelBuilder.ApplyConfiguration(new VisitantesMap());
+        //modelBuilder.ApplyConfiguration(new VisitantesMap());
         // modelBuilder.ApplyConfiguration(new RegistrosMap());
-        // modelBuilder.ApplyConfiguration(new PrestadorServicosMap());
+        modelBuilder.ApplyConfiguration(new PrestadoresMap());
+
+        modelBuilder.Entity<Registro>()
+            .HasOne(r => r.visitante)
+            .WithMany(v => v.Registros)
+            .HasForeignKey(r => r.VisitanteId);
+
+        modelBuilder.Entity<Registro>()
+            .HasOne(r => r.morador)
+            .WithMany(m => m.Registros)
+            .HasForeignKey(r => r.moradorId);
+        modelBuilder.Entity<Registro>()
+        .HasOne(r => r.prestadorServico)
+        .WithMany(p => p.Registros)
+        .HasForeignKey(h => h.PrestadorServicoId);
 
     }
 }

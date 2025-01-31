@@ -14,9 +14,10 @@ public class MoradoresMap : IEntityTypeConfiguration<Morador>
         builder.Property(x => x.Nome)
         .IsRequired()
         .HasMaxLength(100);
-        builder.HasMany(x => x.Autorizacoes)
-        .WithOne(x => x.morador)
-        .OnDelete(DeleteBehavior.Restrict);
+        builder.HasMany(m => m.Registros)
+            .WithOne(r => r.morador)
+            .HasForeignKey(r => r.moradorId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.DocumentoRG)
         .IsRequired()
@@ -31,6 +32,6 @@ public class MoradoresMap : IEntityTypeConfiguration<Morador>
         .HasMaxLength(80);
 
         builder.Property(x => x.Tipo)
-        .IsRequired(false);
+        .IsRequired();
     }
 }
