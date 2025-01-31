@@ -9,4 +9,5 @@ public class Visitante : IPessoa
     public string Tipo { get; set; }
     public string Endereco { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public ICollection<Registro> Registros { get; set; }
 }
