@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj": {}
+    "C:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj": {}
   },
   "projects": {
-    "c:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj": {
+    "C:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj",
+        "projectUniqueName": "C:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj",
         "projectName": "PortariaAPI",
-        "projectPath": "c:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj",
+        "projectPath": "C:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj",
         "packagesPath": "C:\\Users\\Matheus\\.nuget\\packages\\",
-        "outputPath": "c:\\Dev\\AuthApi\\PortariaAPI\\obj\\",
+        "outputPath": "C:\\Dev\\AuthApi\\PortariaAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Matheus\\AppData\\Roaming\\NuGet\\NuGet.Config",

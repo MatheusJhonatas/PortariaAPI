@@ -18,13 +18,19 @@ public class VisitantesMap : IEntityTypeConfiguration<Visitante>
         .IsRequired()
         .HasMaxLength(20);
 
-        builder.Property(c => c.Endereco)
+        builder.Property(c => c.Rua)
         .IsRequired()
+        .HasColumnName("Rua")
+        .HasColumnType("NVARCHAR")
+        .HasMaxLength(140);
+        builder.Property(c => c.NumeroCasa)
+        .IsRequired()
+        .HasColumnName("Numero")
         .HasColumnType("NVARCHAR")
         .HasMaxLength(140);
         builder.Property(c => c.Tipo)
             .IsRequired(false)
-            .HasMaxLength(50);
+            .HasMaxLength(5);
 
 
     }

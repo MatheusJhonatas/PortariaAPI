@@ -8,16 +8,18 @@ public class PorteiroContoller : ControllerBase
 {
     [HttpPost("v1/porteiros")]
     public async Task<IActionResult> Post(
-        [FromServices] PortariaDataContext context
+        [FromServices] PortariaDataContext context,
+        [FromBody] Porteiro model
     )
     {
         var porteiro = new Porteiro()
         {
-
-            Nome = "Matheus Jhonatas dos Santos",
-            DocumentoRG = "50.624.425-8",
-            Endereco = "Rua Tabaré 424, apto 56 Torre 1",
-            Tipo = "Porteiro"
+            Id = 1,
+            Nome = model.Nome,
+            DocumentoRG = model.DocumentoRG,
+            Rua = model.Rua,
+            NumeroCasa = model.NumeroCasa,
+            Tipo = model.Tipo
         };
         await context.Porteiros.AddAsync(porteiro);
         await context.SaveChangesAsync();
