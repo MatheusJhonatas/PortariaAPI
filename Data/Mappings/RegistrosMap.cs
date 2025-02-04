@@ -8,6 +8,7 @@ public class RegistrosMap : IEntityTypeConfiguration<Registro>
         builder.ToTable("Registro");
 
         builder.HasKey(c => c.Numero);
+
         builder.Property(c => c.horarioEntrada)
         .IsRequired();
         builder.Property(c => c.horarioSaida)

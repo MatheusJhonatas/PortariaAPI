@@ -15,10 +15,10 @@ public class PortariaDataContext : DbContext
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // modelBuilder.ApplyConfiguration(new PorteirosMap());
+        modelBuilder.ApplyConfiguration(new PorteirosMap());
         modelBuilder.ApplyConfiguration(new MoradoresMap());
-        //modelBuilder.ApplyConfiguration(new VisitantesMap());
-        // modelBuilder.ApplyConfiguration(new RegistrosMap());
+        modelBuilder.ApplyConfiguration(new VisitantesMap());
+        modelBuilder.ApplyConfiguration(new RegistrosMap());
         modelBuilder.ApplyConfiguration(new PrestadoresMap());
 
         modelBuilder.Entity<Registro>()
