@@ -24,6 +24,14 @@ public class PrestadoresMap : IEntityTypeConfiguration<PrestadorServico>
         .HasColumnType("NVARCHAR")
         .HasMaxLength(60);
 
+        builder.Property(c => c.Endereco)
+        .IsRequired()
+        .HasColumnName("Endereço")
+        .HasColumnType("NVARCHAR")
+        .HasMaxLength(50);
+        builder.Property(c => c.Tipo)
+            .IsRequired()
+            .HasMaxLength(50);
 
 
     }
