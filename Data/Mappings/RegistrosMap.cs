@@ -23,7 +23,7 @@ public class RegistrosMap : IEntityTypeConfiguration<Registro>
 
         builder.HasOne(e => e.morador)
         .WithMany(m => m.Registros)
-        .HasForeignKey(e => e.moradorId);
+        .HasForeignKey(e => e.MoradorId);
 
         builder.HasOne(h => h.prestadorServico)
         .WithMany(p => p.Registros)

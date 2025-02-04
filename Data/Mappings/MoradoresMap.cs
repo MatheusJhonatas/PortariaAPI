@@ -16,7 +16,7 @@ public class MoradoresMap : IEntityTypeConfiguration<Morador>
         .HasMaxLength(100);
         builder.HasMany(m => m.Registros)
             .WithOne(r => r.morador)
-            .HasForeignKey(r => r.moradorId)
+            .HasForeignKey(r => r.MoradorId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(x => x.DocumentoRG)
