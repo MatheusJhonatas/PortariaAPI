@@ -13,8 +13,10 @@ public class PortariaDataContext : DbContext
     {
         optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Portaria;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;");
     }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        //Método OnModelCreating é usado para configurar o modelo de dados do contexto, quando criamos um contexto no banco de dados as entidades precisam ser mapeadas, e este método que faz essa configuração de mapeamento. 
         modelBuilder.ApplyConfiguration(new PorteirosMap());
         modelBuilder.ApplyConfiguration(new MoradoresMap());
         modelBuilder.ApplyConfiguration(new VisitantesMap());
@@ -29,7 +31,7 @@ public class PortariaDataContext : DbContext
         modelBuilder.Entity<Registro>()
             .HasOne(r => r.morador)
             .WithMany(m => m.Registros)
-            .HasForeignKey(r => r.moradorId);
+            .HasForeignKey(r => r.MoradorId);
         modelBuilder.Entity<Registro>()
         .HasOne(r => r.prestadorServico)
         .WithMany(p => p.Registros)
