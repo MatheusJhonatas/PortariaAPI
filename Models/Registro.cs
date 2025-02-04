@@ -7,7 +7,8 @@ public class Registro
     public int VisitanteId { get; set; }
 
     public Visitante visitante { get; set; }
-
+    public string Rua { get; set; }
+    public string NumeroCasa { get; set; }
     public int MoradorId { get; set; }
     public Morador morador { get; set; }
     public int PrestadorServicoId { get; set; }

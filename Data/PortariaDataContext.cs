@@ -9,6 +9,7 @@ public class PortariaDataContext : DbContext
     public DbSet<PrestadorServico> PrestadorServicos { get; set; }
 
 
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Server=localhost,1433;Database=Portaria;User ID=sa;Password=1q2w3e4r@#$;Trusted_Connection=False; TrustServerCertificate=True;");
@@ -36,6 +37,9 @@ public class PortariaDataContext : DbContext
         .HasOne(r => r.prestadorServico)
         .WithMany(p => p.Registros)
         .HasForeignKey(h => h.PrestadorServicoId);
+        modelBuilder.Entity<Morador>()
+            .Property(m => m.Rua);
+
 
     }
 }

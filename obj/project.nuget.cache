@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7NT65hgQkwI=",
+  "dgSpecHash": "TEOIyGV7N/8=",
   "success": true,
-  "projectFilePath": "c:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj",
+  "projectFilePath": "C:\\Dev\\AuthApi\\PortariaAPI\\PortariaAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Matheus\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Matheus\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

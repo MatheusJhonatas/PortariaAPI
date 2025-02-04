@@ -1,11 +1,14 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using PortariaAPI.Models;
 
 public class Morador : IPessoa
 {
     public ICollection<Registro> Registros { get; set; }
-    public string Endereco { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string Nome { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string DocumentoRG { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string Tipo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public int Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    public string Rua { get; set; }
+    public string NumeroCasa { get; set; }
+    public int Id { get; set; }
+    public string Nome { get; set; }
+    public string DocumentoRG { get; set; }
+    public string Tipo { get; set; }
 }

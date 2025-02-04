@@ -25,9 +25,14 @@ public class MoradoresMap : IEntityTypeConfiguration<Morador>
         .HasColumnType("VARCHAR")
         .HasMaxLength(15);
 
-        builder.Property(x => x.Endereco)
+        builder.Property(x => x.Rua)
         .IsRequired()
-        .HasColumnName("Endereço")
+        .HasColumnName("Rua")
+        .HasColumnType("NVARCHAR")
+        .HasMaxLength(80);
+        builder.Property(c => c.NumeroCasa)
+        .IsRequired()
+        .HasColumnName("Numero")
         .HasColumnType("NVARCHAR")
         .HasMaxLength(80);
 
