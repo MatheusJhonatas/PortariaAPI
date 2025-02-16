@@ -1,28 +1,75 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore;
+using System;
 
-namespace PortariaAPI.Controllers;
 
 [ApiController]
-public class PorteiroContoller : ControllerBase
+[Route("api/[controller]")]
+public class PorteiroController : ControllerBase
 {
-    [HttpPost("v1/porteiros")]
-    public async Task<IActionResult> Post(
-        [FromServices] PortariaDataContext context,
-        [FromBody] Porteiro model
-    )
+    private readonly PortariaDataContext _context;
+
+    public PorteiroController(PortariaDataContext context)
     {
-        var porteiro = new Porteiro()
-        {
-            Id = 1,
-            Nome = model.Nome,
-            DocumentoRG = model.DocumentoRG,
-            Rua = model.Rua,
-            NumeroCasa = model.NumeroCasa,
-            Tipo = model.Tipo
-        };
-        await context.Porteiros.AddAsync(porteiro);
-        await context.SaveChangesAsync();
-        return Created($"v1/porteiros/{porteiro.Id}", porteiro);
+        _context = context;
     }
+
+    [HttpPost("RegistrarEntrada")]
+    public async Task<IActionResult> RegistrarEntrada([FromBody] RegistroEntradaDto entradaDto)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        var registro = new Registro
+        {
+            VisitanteId = entradaDto.VisitanteId,
+            MoradorId = entradaDto.MoradorId,
+            PrestadorServicoId = entradaDto.PrestadorServicoId,
+            HorarioEntrada = DateTime.Now,
+            Status = "Entrada"
+        };
+
+        _context.Registros.Add(registro);
+        await _context.SaveChangesAsync();
+
+        return Ok(registro);
+    }
+
+    [HttpPost("RegistrarSaida/{id}")]
+    public async Task<IActionResult> RegistrarSaida(int id)
+    {
+        var registro = await _context.Registros.FindAsync(id);
+        if (registro == null)
+        {
+            return NotFound();
+        }
+
+        registro.HorarioSaida = DateTime.Now;
+        registro.Status = "Saída";
+
+        _context.Registros.Update(registro);
+        await _context.SaveChangesAsync();
+
+        return Ok(registro);
+    }
+}
+public class Registro
+{
+    public int Id { get; set; }
+    public int VisitanteId { get; set; }
+    public int MoradorId { get; set; }
+    public int PrestadorServicoId { get; set; }
+    public DateTime HorarioEntrada { get; set; }
+    public DateTime? HorarioSaida { get; set; }
+    public string Status { get; set; }
+}
+
+public class RegistroEntradaDto
+public class RegistroEntradaDto
+{
+    public int VisitanteId { get; set; }
+    public int MoradorId { get; set; }
+    public int PrestadorServicoId { get; set; }
 }

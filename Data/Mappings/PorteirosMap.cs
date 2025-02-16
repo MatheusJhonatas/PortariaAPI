@@ -19,5 +19,8 @@ public class PorteirosMap : IEntityTypeConfiguration<Porteiro>
         .HasColumnType("NVARCHAR")
         .HasMaxLength(100);
 
+        builder.HasMany(p => p.Registros)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Restrict);
     }
 }
