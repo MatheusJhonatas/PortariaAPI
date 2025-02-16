@@ -4,7 +4,7 @@ using PortariaAPI.Models;
 
 public class Porteiro : IPessoa
 {
-    public List<Registro> Registros { get; set; }
+    public List<Registro> Registros { get; set; } = new List<Registro>();
 
     public string Nome { get; set; }
     public string DocumentoRG { get; set; }
